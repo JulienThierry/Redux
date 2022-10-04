@@ -11,7 +11,7 @@ const User = () => {
         <h3>{!isEmpty(user[0]) && user[0].pseudo}</h3>
         <img src="https://thispersondoesnotexist.com/image" alt="" />
         <p>Age : 35 ans</p>
-        <p>Like(s) : 0</p>
+        <p>Like(s) : {!isEmpty(user[0]) && user[0].likes}</p>
       </div>
     </div>
   );
