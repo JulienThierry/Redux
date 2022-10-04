@@ -19,6 +19,7 @@ const store = createStore(
 store.dispatch(getPosts());
 store.dispatch(getUser());
 
+
 ReactDOM.render(
     <Provider store={store}>
         <App />
