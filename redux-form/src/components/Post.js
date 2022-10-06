@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editPosts } from "../actions/post.action";
+import { deletePosts, editPosts } from "../actions/post.action";
 import Like from "./Like";
 import { isEmpty } from "./Utils";
 
@@ -31,7 +31,7 @@ const Post = ({ post }) => {
       {!isEmpty(user[0]) && user[0].pseudo === post.author && (
         <div className="edit-delete">
           <img onClick={() => setEditToggle(!editToggle)} src="./icons/edit.svg" alt="edit" />
-          <img src="./icons/delete.svg" alt="delete" />
+          <img src="./icons/delete.svg" alt="delete" onClick={() => dispatch(deletePosts(post.id))} />
         </div>
       )}
       <h2>{post.title}</h2>
